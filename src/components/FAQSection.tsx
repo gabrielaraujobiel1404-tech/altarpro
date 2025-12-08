@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WaveDivider } from "@/components/FloatingElements";
 
 const faqs = [
   {
@@ -43,11 +44,19 @@ const faqs = [
 export const FAQSection = () => {
   return (
     <section className="relative py-20 bg-background overflow-hidden">
+      {/* Wave Divider Top */}
+      <WaveDivider className="absolute top-0 left-0 text-card -translate-y-[99%]" />
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block bg-ocean/10 text-ocean px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            ❓ Perguntas Frequentes
-          </span>
+          <div className="inline-flex items-center gap-2 bg-ocean/10 text-ocean px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <span>Perguntas Frequentes</span>
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Ainda Tem <span className="text-primary">Dúvidas?</span>
           </h2>
@@ -62,12 +71,12 @@ export const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-2xl border-2 border-border px-6 data-[state=open]:border-primary/50 transition-colors duration-300"
+                className="bg-card rounded-2xl border-2 border-border px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-soft transition-all duration-300 hover:border-primary/30"
               >
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-6">
-                  {faq.question}
+                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-6 group">
+                  <span className="group-hover:text-primary transition-colors">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6">
+                <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

@@ -49,7 +49,7 @@ export const PaperPlane = ({ className, color = "orange" }: PaperPlaneProps) => 
 interface FloatingElementProps {
   children: React.ReactNode;
   className?: string;
-  animation?: "float" | "float-delayed" | "float-slow" | "bounce-gentle";
+  animation?: "float" | "float-delayed" | "float-slow" | "bounce-gentle" | "sparkle" | "rotate-slow";
 }
 
 export const FloatingElement = ({
@@ -62,6 +62,8 @@ export const FloatingElement = ({
     "float-delayed": "animate-float-delayed",
     "float-slow": "animate-float-slow",
     "bounce-gentle": "animate-bounce-gentle",
+    "sparkle": "animate-sparkle",
+    "rotate-slow": "animate-rotate-slow",
   };
 
   return (
@@ -75,7 +77,7 @@ export const StarIcon = ({ className }: { className?: string }) => (
     fill="currentColor"
     className={cn("w-6 h-6 text-secondary", className)}
   >
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
   </svg>
 );
 
@@ -96,5 +98,17 @@ export const CrossIcon = ({ className }: { className?: string }) => (
     className={cn("w-8 h-8 text-secondary", className)}
   >
     <path d="M11 2v7H4v4h7v9h2v-9h7V9h-7V2h-2z" />
+  </svg>
+);
+
+// Decorative Divider
+export const WaveDivider = ({ className, flip = false }: { className?: string; flip?: boolean }) => (
+  <svg
+    viewBox="0 0 1440 100"
+    fill="currentColor"
+    className={cn("w-full h-auto", flip && "rotate-180", className)}
+    preserveAspectRatio="none"
+  >
+    <path d="M0,40 C360,100 720,0 1080,50 C1260,75 1380,60 1440,40 L1440,100 L0,100 Z" />
   </svg>
 );
