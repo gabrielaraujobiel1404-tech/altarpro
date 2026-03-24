@@ -9,11 +9,13 @@ import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { FAQSection } from "@/components/FAQSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
+import { StickyBottomCTA } from "@/components/StickyBottomCTA";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      <StickyBottomCTA />
       <main className="pt-16">
         <HeroSection />
         <ProblemSection />
