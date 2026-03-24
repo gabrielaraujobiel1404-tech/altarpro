@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { ProblemSection } from "@/components/ProblemSection";
 import { SolutionSection } from "@/components/SolutionSection";
 import { PricingSection } from "@/components/PricingSection";
+import { BonusSection } from "@/components/BonusSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { FAQSection } from "@/components/FAQSection";
